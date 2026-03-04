@@ -1,0 +1,23 @@
+{
+  "skill_name": "cortex",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "What schemas are available in the test-ai project? Give me a quick summary of what tables and structures exist.",
+      "expected_output": "Reads .cortex/settings.json for active project, then reads .cortex/MAP.md for orientation, then reads .cortex/projects/test-ai/shadow-index.json to list schema artifacts. Presents available tables/views/functions with their logical IDs.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need to understand the fraud detection logic in the checkout-api service. Where is it and what does it say?",
+      "expected_output": "Reads .cortex/MAP.md to orient, resolves the logical ID for the fraud detection logic (e.g. payment-system:checkout-api:logic:fraud-detection) from the project shadow-index, reads the resolved file, and summarizes the content.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "What personas are loaded in this cortex project and which one should I use for database schema work?",
+      "expected_output": "Reads .cortex/MAP.md and .cortex/shadow-index.json to list available personas (core:personas:*). Reads each persona file via resolved path. Recommends the dba persona for database schema work and explains its capabilities.",
+      "files": []
+    }
+  ]
+}
